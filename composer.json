@@ -1,8 +1,11 @@
 {
-    "name": "js/api-n",
+    "name": "jesus/api-n",
+    "require": {
+        "bramus/router": "^1.6"
+    },
     "autoload": {
         "psr-4": {
-            "Js\\ApiN\\": "src/"
+            "ApiN\\": "app/"
         }
     },
     "authors": [
@@ -10,12 +13,5 @@
             "name": "Jesús S.P.",
             "email": "shamandul@gmail.com"
         }
-    ],
-    "require": {
-        "slim/slim": "4.*",
-        "slim/psr7": "^1.6",
-        "doctrine/orm": "^3.0",
-        "symfony/cache": "^7.0",
-        "doctrine/dbal": "^4.0"
-    }
+    ]
 }

@@ -1,25 +1,12 @@
 <?php
-use Psr\Http\Message\ResponseInterface as Response;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Factory\AppFactory;
+date_default_timezone_set('Europe/Madrid');
+error_reporting(E_ALL);
+ini_set('ignore_repeated_errors', true);
+ini_set('display_errors', true);
+ini_set('log_errors', true);
+ini_set('error_log', 'debug.log');
 
-require __DIR__ . '/vendor/autoload.php';
+require_once 'vendor/autoload.php';
+require_once 'app/configs/config.php';
 
-$app = AppFactory::create();
-
-$app->get('/', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Hello world!");
-    return $response;
-});
-
-$app->get('/foo', function (Request $request, Response $response, array $args) {
-  $payload = json_encode(['hello' => 'world'], JSON_PRETTY_PRINT);
-  $response->getBody()->write($payload);
-  return $response->withHeader('Content-Type', 'application/json');
-});
-$app->get('/users', function (Request $request, Response $response, array $args) {
-  $payload = json_encode(['id' => 1, 'name' => 'Jesús'], JSON_PRETTY_PRINT);
-  $response->getBody()->write($payload);
-  return $response->withHeader('Content-Type', 'application/json');
-});
-$app->run();
+require_once 'app/routers/router.php';
