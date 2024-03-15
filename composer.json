@@ -13,5 +13,8 @@
             "name": "Jesús S.P.",
             "email": "shamandul@gmail.com"
         }
-    ]
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^11.0"
+    }
 }
