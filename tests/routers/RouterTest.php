@@ -19,7 +19,6 @@ class RouterTest extends TestCase
         $msg = curl_getinfo($con, CURLINFO_HTTP_CODE);
         curl_close($con);
 
-
         $this->assertEquals(200, $msg);
     }
 }

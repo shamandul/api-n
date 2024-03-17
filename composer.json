@@ -1,7 +1,8 @@
 {
     "name": "jesus/api-n",
     "require": {
-        "bramus/router": "^1.6"
+        "bramus/router": "^1.6",
+        "zircote/swagger-php": "^4.8"
     },
     "autoload": {
         "psr-4": {
