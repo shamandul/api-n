@@ -21,4 +21,13 @@ class RouterTest extends TestCase
 
         $this->assertEquals(200, $msg);
     }
+    public function testRouterGetRootStatus404()
+    {
+        $con = curl_init("http://api-n.ddev.site/");
+        curl_exec($con);
+        $msg = curl_getinfo($con, CURLINFO_HTTP_CODE);
+        curl_close($con);
+
+        $this->assertEquals(404, $msg);
+    }
 }

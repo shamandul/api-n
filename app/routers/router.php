@@ -29,7 +29,9 @@ $router->get('/', function () {
 });
 
 $router->set404(function () {
-    return json_encode(["error" => 'Error 404 not found']);
+    header('HTTP/1.1 404 Not Found');
+    header('Content-Type: application/json');
+    echo json_encode(["error" => 'Error 404 not found']);
 });
 
 
